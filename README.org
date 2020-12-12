@@ -1,0 +1,28 @@
+#+TITLE: emacs-vdot.el
+#+AUTHOR: Matti Uusitalo
+* emacs-vdot.el
+Functions to help calculate optimal training paces for running. I
+adapted this from Jack Daniels - Daniels' Running Formula.
+* Usage
+** Find out your VDOT.
+
+ #+BEGIN_SRC elisp
+ (let ((distance 10000)
+       (minutes 35)
+       (seconds 45))
+   (VDot distance (+ (* 60 minutes) seconds)))
+ #+END_SRC
+
+ #+RESULTS:
+ : 60.624511501330915
+
+** Find out your pace at threshold (about 0.85 % of your VDot)
+   Results are in seconds / 1000 meters
+ #+BEGIN_SRC elisp
+(let* ((vdot 60)
+       (threshold 0.85))
+  (effort threshold vdot))
+ #+END_SRC
+
+ #+RESULTS:
+ : 226
