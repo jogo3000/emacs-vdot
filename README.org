@@ -3,6 +3,29 @@
 * emacs-vdot.el
 Functions to help calculate optimal training paces for running. I
 adapted this from Jack Daniels - Daniels' Running Formula.
+* Theoretical basis
+On average, the effort level a runner can sustain for a given duration
+is a certain percentage of their *VOMax* (maximal oxygen
+consumption). Therefore, based on the duration of a test effort the
+percentage of their VOMax can be estimated.
+
+The pace reached in the test effot can be used as basis to estimate
+their oxygen consumption *VO2*.
+
+Combining these two values, the runner's pseudo VOMax can be
+estimated. This is called *VDot* by Jack Daniels. What's exactly
+/pseudo/ about it, then? Different runners have different levels of
+running economy. Because of this, runners who measure similar VOMax in
+a lab setting can perform very differently when racing. VDOT can make
+comparing test efforts easier as it can be estimated from races or
+test runs with different distances.
+
+Knowing a runner's VDOT makes it easier to prescribe optimal training
+paces for them. Here the coache's experience comes into play. These
+numbers should not be used blindly. We know that different runners
+perform better over short distances while others thrive running the
+marathon. These individual differences mut be taken into account when
+coaching.
 * Usage
 ** Find out your VDOT.
 
