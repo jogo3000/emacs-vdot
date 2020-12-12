@@ -3,6 +3,8 @@
 * emacs-vdot.el
 Functions to help calculate optimal training paces for running. I
 adapted this from Jack Daniels - Daniels' Running Formula.
+* State of project
+Experimental hobby project. Expect breakage and backwards incompatible changes.
 * Theoretical basis
 On average, the effort level a runner can sustain for a given duration
 is a certain percentage of their *VOMax* (maximal oxygen
