@@ -13,11 +13,11 @@
        (* 0.2989558
           (exp (* -0.1932605 minutes))))))
 
-(defun VO2 (SPEED)
+(defun VO2 (speed)
   "Return the oxygen consumption of a runner when running in a given SPEED."
   (+ -4.60
-     (* 0.182258 SPEED)
-     (* 0.000104 (expt SPEED 2))))
+     (* 0.182258 speed)
+     (* 0.000104 (expt speed 2))))
 
 (defun m-min (distance time)
   "Return speed as meters / minutes.
