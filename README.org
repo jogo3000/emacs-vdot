@@ -33,7 +33,7 @@ coaching.
  (let ((distance 10000)
        (minutes 35)
        (seconds 45))
-   (VDot distance (+ (* 60 minutes) seconds)))
+   (vdot-VDot distance (+ (* 60 minutes) seconds)))
  #+END_SRC
 
  #+RESULTS:
@@ -44,7 +44,7 @@ coaching.
  #+BEGIN_SRC elisp :exports both
 (let* ((vdot 60)
        (threshold 0.85))
-  (effort threshold vdot))
+  (vdot-pace-at-effort threshold vdot))
  #+END_SRC
 
  #+RESULTS:
