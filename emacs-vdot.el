@@ -5,7 +5,7 @@
 ;;; Code:
 
 (defun %VOmax (seconds)
-  "Return the precentage of VOmax a runner can sustain for the duration given in SECONDS."
+  "Return the percentage of VOmax a runner can sustain for the duration given in SECONDS."
   (let ((minutes (/ (float seconds) 60)))
     (+ 0.8
        (* 0.1894393
