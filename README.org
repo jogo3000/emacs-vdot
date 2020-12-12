@@ -6,7 +6,7 @@ adapted this from Jack Daniels - Daniels' Running Formula.
 * Usage
 ** Find out your VDOT.
 
- #+BEGIN_SRC elisp
+ #+BEGIN_SRC elisp :exports both
  (let ((distance 10000)
        (minutes 35)
        (seconds 45))
@@ -18,7 +18,7 @@ adapted this from Jack Daniels - Daniels' Running Formula.
 
 ** Find out your pace at threshold (about 0.85 % of your VDot)
    Results are in seconds / 1000 meters
- #+BEGIN_SRC elisp
+ #+BEGIN_SRC elisp :exports both
 (let* ((vdot 60)
        (threshold 0.85))
   (effort threshold vdot))
