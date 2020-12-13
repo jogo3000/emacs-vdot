@@ -66,6 +66,18 @@ Return value is seconds / 1000 meters."
          (velocity (vdot-VO2->velocity part)))
     (vdot-velocity->pace velocity)))
 
+(defun vdot-parse-time (time)
+  "Return TIME string parsed into seconds."
+  (cl-destructuring-bind (minutes seconds)
+      (split-string time "'")
+    (+ (* 60 (string-to-number minutes))
+       (string-to-number seconds))))
+
+(defun vdot-pace-to-string (pace)
+  "Return PACE as readable string."
+  (let* ((minutes (/ pace 60))
+         (seconds (% pace 60)))
+    (format "%02d'%02d / km" minutes seconds)))
 
 (provide 'emacs-vdot)
 ;;; emacs-vdot ends here
