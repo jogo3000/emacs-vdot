@@ -26,7 +26,7 @@ Gilbert's formulas use meters / minutes as units.  This function
 calculates the speed required to cover a DISTANCE in the given
 TIME using these units."
 
-  (/ distance (/ time 60)))
+  (/ distance (/ (float time) 60)))
 
 (defun vdot-VDot  (race-distance race-duration)
   "Calculate the pseudo VO2max, VDot based on a RACE-DISTANCE and RACE-DURATION."
