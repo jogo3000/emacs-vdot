@@ -79,5 +79,21 @@ Return value is seconds / 1000 meters."
          (seconds (% pace 60)))
     (format "%02d'%02d / km" minutes seconds)))
 
+(defun vdot-seconds-to-string (time)
+  "Return TIME as a readable string."
+  (let* ((minutes (/ time 60))
+         (seconds (% time 60)))
+    (format "%02d'%02d" minutes seconds)))
+
+(defun vdot-predict-performance (vdot distance)
+  "Predict a performance for a DISTANCE given a VDOT."
+  (let ((guess 60))
+    (while (< vdot (vdot-VDot distance guess))
+      (setq guess (+ guess 60)))
+    (setq guess (- guess 60))
+    (while (< vdot (vdot-VDot distance guess))
+      (setq guess (1+ guess)))
+    (1- guess)))
+
 (provide 'emacs-vdot)
 ;;; emacs-vdot ends here

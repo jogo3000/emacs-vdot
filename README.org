@@ -28,18 +28,24 @@ numbers should not be used blindly. We know that different runners
 perform better over short distances while others thrive running the
 marathon. These individual differences mut be taken into account when
 coaching.
+* Predicting race results
+Once *VDot* is known, we can predict race results. The tricky bit when
+predicting race results is that given a speed the race will take a
+shorter or longer time. How long the race takes determines how big a
+percentage of *VOMax* can be recruited. That in turn determines the
+speed.
 * Usage
 ** Find out your VDOT.
 
  #+BEGIN_SRC elisp :exports both
- (let ((distance 10000)
-       (minutes 35)
-       (seconds 45))
+ (let* ((distance 10000)
+        (minutes 35)
+        (seconds 45))
    (vdot-VDot distance (+ (* 60 minutes) seconds)))
  #+END_SRC
 
  #+RESULTS:
- : 60.624511501330915
+ : 59.241924017008316
 
 ** Find out your pace at threshold (about 0.85 % of your VDot)
    Results are in seconds / 1000 meters
@@ -51,3 +57,14 @@ coaching.
 
  #+RESULTS:
  : 226
+
+** Predict a 5000 meter performance from your VDOT
+   #+BEGIN_SRC elisp :exports both
+   (let* ((vdot 60)
+          (distance 5000))
+     (vdot-seconds-to-string
+       (vdot-predict-performance vdot distance)))
+   #+END_SRC
+
+   #+RESULTS:
+   : 17'02
