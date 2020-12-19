@@ -34,6 +34,10 @@ predicting race results is that given a speed the race will take a
 shorter or longer time. How long the race takes determines how big a
 percentage of *VOMax* can be recruited. That in turn determines the
 speed.
+
+While it is probably possible to solve the equations, this package
+just brute forces the answer by making a guess and improving the guess
+until close enough.
 * Usage
 ** Find out your VDOT.
 
